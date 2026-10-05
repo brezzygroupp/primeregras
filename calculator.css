@@ -1,0 +1,330 @@
+body.calculator-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(255, 122, 0, .035), transparent 26%),
+    #0a090d;
+}
+
+.calc-shell {
+  width: min(1085px, calc(100% - 42px));
+  margin: 0 auto;
+  padding: 48px 0 100px;
+}
+
+.calc-header {
+  position: relative;
+  padding-bottom: 32px;
+}
+
+.calc-header h1 {
+  margin: 23px 0 8px;
+  color: #f5f4f6;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1;
+  letter-spacing: -1.8px;
+}
+
+.calc-header p {
+  margin: 0;
+  color: #a3a6b0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.back-link {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #8f939d;
+  text-decoration: none;
+  border: 1px solid #292b32;
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 10px;
+  transition: .18s;
+}
+.back-link:hover {
+  color: #fff;
+  border-color: #7a3d00;
+  background: rgba(255,122,0,.07);
+}
+
+.calc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 2px 0 22px;
+}
+
+.calc-tab {
+  min-width: 92px;
+  height: 39px;
+  padding: 0 16px;
+  border: 1px solid #2a2c32;
+  border-radius: 22px;
+  color: #b0b3bc;
+  background: #0d0f12;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10px;
+  transition: .18s;
+}
+
+.calc-tab:hover {
+  color: #fff;
+  border-color: #5d320e;
+}
+
+.calc-tab.active {
+  color: #fff;
+  border-color: #ff7a00;
+  box-shadow: inset 0 0 0 1px rgba(255,122,0,.25);
+}
+
+.calc-tab.hospital.active { border-color: #8b5cf6; box-shadow: inset 0 0 0 1px rgba(139,92,246,.2); }
+.calc-tab.legal.active { border-color: #37d67a; box-shadow: inset 0 0 0 1px rgba(55,214,122,.2); }
+
+.calc-divider {
+  border-top: 1px solid #25272d;
+  margin-bottom: 29px;
+}
+
+.calc-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 345px;
+  gap: 24px;
+  align-items: start;
+}
+
+.product-search {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid #2b2d34;
+  border-radius: 6px;
+  background: #141519;
+  color: #777c87;
+}
+
+.product-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: #e9e9ed;
+  background: transparent;
+  font-size: 12px;
+}
+.product-search input::placeholder { color: #717580; }
+
+.product-group { margin-top: 26px; }
+.product-group h2 {
+  margin: 0 0 12px;
+  color: #eeeef1;
+  font-size: 12px;
+  letter-spacing: .15px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.product-card {
+  min-height: 66px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 10px 10px 14px;
+  border: 1px solid #2a2c32;
+  border-radius: 7px;
+  background: #101114;
+}
+
+.product-name {
+  color: #f0f0f2;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.product-price {
+  margin-top: 3px;
+  color: #9296a0;
+  font-size: 9px;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.qty-btn, .qty-value {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #292c33;
+  border-radius: 5px;
+  background: #15171b;
+  color: #9da1ab;
+  display: grid;
+  place-items: center;
+}
+.qty-btn {
+  cursor: pointer;
+  font-size: 15px;
+}
+.qty-btn:hover {
+  color: #fff;
+  border-color: #8a4808;
+  background: rgba(255,122,0,.08);
+}
+.qty-value { font-size: 10px; }
+
+.cart-panel {
+  min-height: 380px;
+  padding: 20px;
+  border: 1px solid #2a2c32;
+  border-radius: 10px;
+  background: #101114;
+}
+
+.discount-title {
+  color: #8d929c;
+  font-size: 9px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.discounts {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.discount {
+  height: 36px;
+  padding: 0 11px;
+  border: 1px solid #2b2e35;
+  border-radius: 6px;
+  color: #a7abb4;
+  background: #14161a;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 700;
+}
+.discount:hover { color: #fff; }
+.discount.active {
+  color: #fff;
+  border-color: #8a4a0b;
+  background: rgba(255,122,0,.07);
+}
+
+.empty-cart {
+  min-height: 93px;
+  display: grid;
+  place-items: center;
+  color: #626772;
+  font-size: 10px;
+  text-align: center;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  max-height: 180px;
+  overflow: auto;
+}
+
+.cart-line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #1f2228;
+}
+.cart-line strong { color: #dddfe4; font-size: 10px; }
+.cart-line span { color: #777c87; font-size: 9px; }
+.cart-line-total { color: #d7d8dd !important; }
+
+.summary {
+  margin-top: 12px;
+  border-top: 1px solid #25282e;
+}
+.summary > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  color: #a1a5af;
+  font-size: 10px;
+}
+.summary strong { color: #b9bdc6; }
+.summary .total-row {
+  border-top: 1px solid #25282e;
+  padding-top: 14px;
+  color: #f1f1f3;
+  font-size: 20px;
+  font-weight: 800;
+}
+.summary .total-row strong { color: #f2f2f3; font-size: 20px; }
+
+.copy-btn, .clear-btn {
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 10px;
+  cursor: pointer;
+}
+.copy-btn {
+  margin-top: 7px;
+  border: 1px solid #a65405;
+  background: #e76b00;
+  color: #fff;
+}
+.copy-btn:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+.copy-btn:not(:disabled):hover { background: #ff7a00; }
+
+.clear-btn {
+  margin-top: 8px;
+  border: 1px solid #25282e;
+  background: #131519;
+  color: #838893;
+}
+.clear-btn:hover { color: #fff; border-color: #484b53; }
+
+.copy-status {
+  height: 17px;
+  margin-top: 7px;
+  color: #4fce83;
+  text-align: center;
+  font-size: 8px;
+}
+
+.no-results {
+  padding: 28px 0;
+  color: #686d77;
+  font-size: 10px;
+}
+
+@media (max-width: 900px) {
+  .calc-layout { grid-template-columns: 1fr; }
+  .cart-panel { order: -1; }
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .calc-shell { width: min(100% - 26px, 1085px); padding-top: 28px; }
+  .calc-header h1 { font-size: 30px; }
+  .calc-header p { font-size: 12px; }
+  .back-link { position: static; display: inline-block; margin-top: 15px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .cart-panel { padding: 15px; }
+  .calc-tabs { gap: 6px; }
+  .calc-tab { min-width: auto; padding: 0 12px; }
+}

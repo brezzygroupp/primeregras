@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculadora de venda da Sua Cidade RP.">
+  <title>Calculadora de Venda | Sua Cidade RP</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="calculator.css">
+</head>
+<body class="calculator-page">
+  <div class="calc-shell">
+    <header class="calc-header">
+      <div>
+        <div class="eyebrow">▣ FERRAMENTA INTERNA</div>
+        <h1>CALCULADORA DE VENDA</h1>
+        <p>Medicamentos e atendimentos. Somente esses medicamentos estão à venda,<br class="desktop-only"> o restante é de uso médico.</p>
+      </div>
+      <a class="back-link" href="index.html">← Voltar para regras</a>
+    </header>
+
+    <nav class="calc-tabs" id="categoryTabs" aria-label="Categorias">
+      <button class="calc-tab active legal" data-category="legal">LEGAL</button>
+      <button class="calc-tab" data-category="ilegal">ILEGAL</button>
+      <button class="calc-tab hospital" data-category="hospital">HOSPITAL</button>
+      <button class="calc-tab" data-category="mecanica">MECÂNICA</button>
+      <button class="calc-tab" data-category="tuning">TUNING</button>
+    </nav>
+
+    <div class="calc-divider"></div>
+
+    <main class="calc-layout">
+      <section class="products-panel">
+        <label class="product-search">
+          <span>⌕</span>
+          <input id="productSearch" type="search" placeholder="Buscar em legal..." autocomplete="off">
+        </label>
+
+        <div id="productList"></div>
+      </section>
+
+      <aside class="cart-panel">
+        <div class="discount-title">% &nbsp; DESCONTO</div>
+        <div class="discounts">
+          <button class="discount active" data-discount="0">Sem desconto</button>
+          <button class="discount" data-discount="10">Comum 10%</button>
+          <button class="discount" data-discount="15">Liderança 15%</button>
+        </div>
+
+        <div class="empty-cart" id="emptyCart">Nenhum item selecionado.</div>
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="summary">
+          <div><span>Subtotal</span><strong id="subtotal">R$ 0</strong></div>
+          <div class="total-row"><span>Total</span><strong id="total">R$ 0</strong></div>
+        </div>
+
+        <button class="copy-btn" id="copyBtn" disabled>▣ &nbsp; Copiar lista</button>
+        <button class="clear-btn" id="clearBtn">↻ &nbsp; Limpar</button>
+        <div class="copy-status" id="copyStatus" aria-live="polite"></div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>

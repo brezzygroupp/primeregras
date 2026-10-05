@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manual oficial de regras da cidade.">
+  <title>Manual de Regras | PRIME ROLEPLAY</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">RP</div>
+        <div>
+          <strong>PRIME ROLEPLAY</strong>
+          <span>Central de regras</span>
+        </div>
+      </div>
+
+      <div class="sidebar-title">NAVEGAÇÃO</div>
+      <nav id="sidebarNav" class="sidebar-nav"></nav>
+
+      <a class="tool-card" href="calculadora.html">
+        <div class="tool-icon">▣</div>
+        <div>
+          <strong>Calculadora de Venda</strong>
+          <span>Monte pedidos e aplique descontos</span>
+        </div>
+        <b>›</b>
+      </a>
+
+      <div class="sidebar-footer">
+        <a href="#" aria-label="Discord">◈</a>
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="TikTok">♪</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+        <div class="status">
+          <span class="dot"></span>
+          <span>MANUAL OFICIAL</span>
+        </div>
+        <div class="top-actions">
+          <label class="search">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Buscar nas regras..." autocomplete="off">
+          </label>
+          <div class="system">
+            <span>STATUS</span>
+            <strong>ONLINE</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="eyebrow">▣ DOCUMENTAÇÃO OFICIAL</div>
+        <h1>MANUAL OFICIAL DE<br>REGRAS</h1>
+        <p>Este documento reúne todas as regras oficiais da <b>Sua Cidade RP</b>. Todos os jogadores são responsáveis por conhecer e cumprir as normas antes de jogar.</p>
+        <div class="meta">
+          <span class="live-dot"></span>
+          <span>Em vigor</span>
+          <span>•</span>
+          <span id="updatedAt">Atualizado em 04 de outubro de 2026</span>
+        </div>
+      </section>
+
+      <div class="content">
+        <div id="searchResults" class="search-results hidden"></div>
+        <div id="sections"></div>
+      </div>
+    </main>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="modal" id="calculatorModal" aria-hidden="true">
+    <div class="modal-head">
+      <div>
+        <span class="eyebrow">FERRAMENTA</span>
+        <h2>Calculadora de Venda</h2>
+      </div>
+      <button class="close-btn" onclick="closeCalculator()">×</button>
+    </div>
+    <div class="calc-grid">
+      <label>Quantidade
+        <input id="calcQty" type="number" min="1" value="1">
+      </label>
+      <label>Valor unitário
+        <input id="calcPrice" type="number" min="0" step="0.01" value="100">
+      </label>
+      <label>Desconto (%)
+        <input id="calcDiscount" type="number" min="0" max="100" step="0.1" value="0">
+      </label>
+    </div>
+    <div class="calc-total">
+      <span>Total</span>
+      <strong id="calcTotal">R$ 100,00</strong>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
